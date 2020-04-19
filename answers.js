@@ -14,12 +14,14 @@ let myName = 'Rashid';
 // console.log(myNumber, myName)
 
 // 2- Print and Count
-for (let i = 512; i < 4096; i++) {
+let total =0;
+for (let i =512; i <= 4096; i++) {
   if (i % 5 === 0) {
-    // console.log(`I am counting, ${i}`);
+    // console.log(i);
+    total++;
   }
 }
-// console.log("The final count is 4095");
+// console.log(`There were ${total} multples`)
 
 // 3- Print -52 to 1066 using for loop.
 for (let i = -52; i <= 1066; i++) {
@@ -28,11 +30,11 @@ for (let i = -52; i <= 1066; i++) {
 
 // 4- Multiples of 6 While loop
 
-let j = 1;
-while (j < 60000) {
-  // if(j % 6 === 0)
-  // console.log(j)
-  j++;
+let sixes = 0;
+while (sixes < 60000) {
+  // if(sixes % 6 === 0)
+  // console.log(sixes)
+  sixes++;
 }
 
 
@@ -48,9 +50,11 @@ beCheerful = () => {
 function codingDojo(num) {
   for (let i = 1; i <= num; i++) {
     if (i % 10 === 0) {
-      console.log('Dojo \n\n');
+      console.log('Dojo');
     } else if (i % 5 === 0) {
-      console.log('Coding ')
+      console.log('Coding')
+    } else {
+      console.log(i)
     }
   }
 }
@@ -82,19 +86,25 @@ let result = 0;
 for(let i = -300000; i < 300000; i++) {
   if(i % 2 !== 0) {
     result += i;
-    // console.log(result);
   }
 }
-//the final result is zero
+// console.log(result);
 
 
-// 11- You say it is your birthday
-let myBirthDay = 11;
-if (myBirthDay === 11) {
-  // console.log('How did you know?');
-} else {
-  // console.log('Just another day....')
+
+
+let rashidBirthMonth = 1;
+let rashidBirthDay = 1;
+
+function birthCheck(day, month, valA, valB) {
+  if((day === valA && month === valB) || (day === valB && month === valA)) {
+    console.log('How did you know?');
+  } else {
+    console.log('Just another day buddy.')
+  }
 }
+
+// birthCheck(rashidBirthDay, rashidBirthMonth, 1, 1);
 
 // 12- Countdown by Fours
 let count = 2016;
@@ -109,8 +119,11 @@ function isLeapYear(year) {
     return 'Yey, this is a leap year!';
   } else if (year % 400 === 0) {
     return 'This is a leap year Too.';
-  } 
+  } else {
+    return 'It is not a leap year.'
+  }
 }
+// console.log(isLeapYear('2200'))
 
 //14 flexible countdown
 flexCount = (lowNum, highNum, mult) => {
@@ -123,15 +136,14 @@ flexCount = (lowNum, highNum, mult) => {
 
 //The final CountDown
 finalCountDown = (pram1, pram2, pram3, pram4) => {
-  while (pram2 < pram3) {
-    pram3--;
-    if (pram3 % pram1 === 0) {
-      if (pram3 === pram4) {
-        continue
+  while (pram2 <= pram3) {
+    if(pram2 % pram1 ===0) {
+      if(pram2 !== pram4) {
+        console.log(pram2)
       }
-      console.log(pram3);
     }
+    pram2++;
   }
 }
 
-finalCountDown(3,5,17,9);
+// finalCountDown(3,5,17,9);
